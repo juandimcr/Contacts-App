@@ -17,6 +17,12 @@ async function register(body) {
 }
 
 async function login(body) {
+    try {
+	    const user = await userRepository.getUserByUsername(body.username);
+        return user;
+    } catch (error) {
+        throw error;
+    }
 
 }
 

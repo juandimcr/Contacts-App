@@ -11,5 +11,14 @@ async function insertUser(user) {
     }
 }
 
+async function getUserByUsername(username) {
+    try {
+        const user = await pool.query('SELECT * FROM USER WHERE username=?', username);
+        return user[0];
+    } catch(error) {
+        throw error;
+    }
+}
+
 // Exports
-module.exports = { insertUser };
+module.exports = { insertUser, getUserByUsername };
