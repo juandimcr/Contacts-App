@@ -1,10 +1,11 @@
 class User {
-    constructor(id, username, password, fullname, profile_img) {
+    constructor(id, username, password, fullname, profileImg, email) {
         this.id = id;
         this.username = username;
         this.password = password;
         this.fullname = fullname;
-        this.profile_img = profile_img;
+        this.profileImg = profileImg;
+        this.email = email;
     }
 }
 

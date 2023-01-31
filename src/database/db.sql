@@ -9,10 +9,13 @@ USE contacts_app;
 CREATE TABLE user(
     id varchar(400) NOT NULL,
     username varchar(30) NOT NULL,
-    password varchar(16) NOT NULL,
+    password varchar(100) NOT NULL,
     fullname varchar(70) NOT NULL,
-    profile_img varchar(300) NOT NULL,
-    CONSTRAINT pk_user PRIMARY KEY(id)
+    profileImg varchar(300) NOT NULL,
+    email varchar(60) NOT NULL,
+    CONSTRAINT pk_user PRIMARY KEY(id),
+    CONSTRAINT ak_user UNIQUE(username),
+    CONSTRAINT ak2_user UNIQUE(email)
 );
 
 CREATE TABLE contacts(
