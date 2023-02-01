@@ -2,9 +2,9 @@
 const pool = require('../database/connection');
 
 // Functions
-async function getContacts() {
+async function getContactsByUsername(userId) {
     try {
-        const contacts = await pool.query('SELECT * FROM CONTACTS');
+        const contacts = await pool.query('SELECT * FROM CONTACTS WHERE user=?', [userId]);
         return contacts;
     } catch(err) {
         throw err;
@@ -47,4 +47,4 @@ async function deleteContact(id) {
 }
 
 // Exports
-module.exports = { getContacts, getContactById, insertContact, updateContact, deleteContact };
+module.exports = { getContactsByUsername, getContactById, insertContact, updateContact, deleteContact };

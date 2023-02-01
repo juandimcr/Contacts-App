@@ -12,14 +12,10 @@ async function signIn(req, res) {
     } else {
         // Create access token and refresh token
         const accessToken = jwt.sign({ id: user.id }, process.env.SECRET_KEY_AK, {
-            expiresIn: 900, // 15min
+            expiresIn: 604800, // 7d
           });
-        
-        const refreshToken = jwt.sign({ id: user.id }, process.env.SECRET_KEY_AK, {
-            expiresIn: 2592000, // 30d
-        });
 
-        res.status(200).json({accessToken, refreshToken, id: user.id, username: user.username, 
+        res.status(200).json({accessToken, id: user.id, username: user.username, 
                               fullname: user.fullname, profileImg: user.profileImg, email: user.email});
     }
 }

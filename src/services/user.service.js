@@ -25,5 +25,14 @@ async function getUserByUsername(body) {
     }
 }
 
+async function getUserById(id) {
+    try {
+	    const user = await userRepository.getUserById(id);
+        return user[0];
+    } catch (error) {
+        throw error;
+    }
+}
+
 // Exports
-module.exports = { register, getUserByUsername };
+module.exports = { register, getUserByUsername, getUserById };

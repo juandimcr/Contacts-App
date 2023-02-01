@@ -4,9 +4,9 @@ const Contacts = require('../model/Contacts');
 const contactsRepository = require('../repositories/contacts.repository');
 
 // Functions
-async function getContacts() {
+async function getContactsByUsername(userId) {
     try {
-        const contacts = await contactsRepository.getContacts();
+        const contacts = await contactsRepository.getContactsByUsername(userId);
         return contacts[0];
     } catch (error) {
         throw error;
@@ -52,4 +52,4 @@ async function deleteContact(id) {
 }
 
 // Exports
-module.exports = { getContacts, getContactsById, insertContact, updateContact, deleteContact };
+module.exports = { getContactsByUsername, getContactsById, insertContact, updateContact, deleteContact };
