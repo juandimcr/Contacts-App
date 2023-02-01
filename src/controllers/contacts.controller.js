@@ -4,7 +4,7 @@ const contactsService = require('../services/contacts.service');
 // Controllers
 async function getContactsByUsername(req, res) {
     try {
-        const contacts = await contactsService.getContactsByUsername(req.params.id);
+        const contacts = await contactsService.getContactsByUsername(req.params.userId);
         if (contacts.length > 0) {
             res.status(200).json(contacts)
         } else {

@@ -24,6 +24,10 @@ async function isAuth(req, res, next) {
             return res.status(404).json('User not found')
         }
 
+        if (req.params.userId && user.id !== req.params.userId) {
+            return res.status(404).json('Not found')
+        }
+
 	    req.user = tokenDecoded.id; // Save the user id in the request
 	    next();
 
