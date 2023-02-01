@@ -21,7 +21,7 @@ CREATE TABLE user(
 CREATE TABLE contacts(
     id varchar(400) NOT NULL,
     fullname varchar(70) NOT NULL,
-    contact_img varchar(300),
+    contactImg varchar(300),
     type varchar(20) NOT NULL,
     city varchar(50) NOT NULL,
     country varchar(50) NOT NULL,

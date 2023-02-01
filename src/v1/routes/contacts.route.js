@@ -1,10 +1,13 @@
 // Imports
 const router = require('express').Router();
-const { signIn, signUp } = require('../../controllers/auth.controller');
+const contactsController = require('../../controllers/contacts.controller');
 
 // Routes
-router.post('/signin', signIn);
-router.post('/signup', signUp);
+router.get('/', contactsController.getContacts);
+router.get('/:id', contactsController.getContactById);
+router.post('/', contactsController.insertNewContact);
+router.put('/:id', contactsController.updateContact);
+router.delete('/:id', contactsController.deleteContact);
 
 // Export
 module.exports = router;

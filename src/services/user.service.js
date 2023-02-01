@@ -16,15 +16,14 @@ async function register(body) {
     }
 }
 
-async function login(body) {
+async function getUserByUsername(body) {
     try {
 	    const user = await userRepository.getUserByUsername(body.username);
-        return user;
+        return user[0];
     } catch (error) {
         throw error;
     }
-
 }
 
 // Exports
-module.exports = { register, login };
+module.exports = { register, getUserByUsername };
