@@ -7,7 +7,7 @@ require('dotenv').config();
 // Controllers
 async function signIn(req, res) {
     const user = await userService.getUserByUsername(req.body);
-    if(user.length == 0 || ! await encryptUtil.comparePassword(user.password, req.body.password)) {
+    if(!user || user.length == 0 || ! await encryptUtil.comparePassword(user.password, req.body.password)) {
         res.status(400).json('Username or password are incorrect');
     } else {
         // Create access token and refresh token
