@@ -170,6 +170,9 @@ Endpoints para poder actualizar la información de un usuario
 ## PUT [/api/v1/user/{userId}]
 Actualizar la información de un usuario.
 
++ Parameters
+    + userId: `b879dc49-3068-4d09-a952-a3030f5cd9a0` (string) - El id del usuario
+    
 + Responses:
     + 200 - Usuario actualizado correctamente
     + 401 - No puedes acceder
