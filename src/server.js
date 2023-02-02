@@ -13,8 +13,8 @@ server.use(morgan('dev'));
 server.get('/', (req, res) => {
     res.json('Bienvenido a la API de contactos');
 });
-server.use('/v1/auth', require('./v1/routes/auth.route'));
-server.use('/v1/contacts', require('./v1/routes/contacts.route'));
+server.use('/api/v1/auth', require('./v1/routes/auth.route'));
+server.use('/api/v1/contacts', require('./v1/routes/contacts.route'));
 
 // Export server
 module.exports = server;
