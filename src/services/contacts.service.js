@@ -4,9 +4,9 @@ const Contacts = require('../model/Contacts');
 const contactsRepository = require('../repositories/contacts.repository');
 
 // Functions
-async function getContactsByUsername(userId) {
+async function getContactsByUsername(userId, filter) {
     try {
-        const contacts = await contactsRepository.getContactsByUsername(userId);
+        const contacts = await contactsRepository.getContactsByUsername(userId, filter);
         return contacts[0];
     } catch (error) {
         throw error;

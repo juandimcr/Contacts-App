@@ -2,9 +2,14 @@
 const pool = require('../database/connection');
 
 // Functions
-async function getContactsByUsername(userId) {
+async function getContactsByUsername(userId, filter) {
     try {
-        const contacts = await pool.query('SELECT * FROM CONTACTS WHERE user=?', [userId]);
+        let contacts;
+        if (filter === undefined) {
+            contacts = await pool.query('SELECT * FROM CONTACTS WHERE user=?', [userId]);
+        } else {
+            contacts = await pool.query('SELECT * FROM CONTACTS WHERE user=? AND type=?', [userId, filter]);
+        }
         return contacts;
     } catch(err) {
         throw err;
