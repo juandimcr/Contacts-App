@@ -1,14 +1,23 @@
-FORMAT: 1A
-HOST: https://alpha-api.app.net
+FORMAT: A1
+HOST: https://localhost:3000
 
-# Real World API
-This API Blueprint demonstrates a real world example documenting a portion of
-[App.net API](http://developers.app.net).
+# Contacts App API
+Documentation of the contacts app API
+[App.net API](http://contactfrontend).
 
 NOTE: This document is a **work in progress**.
 
-# Group Posts
-This section groups App.net post resources.
+# Group Contacts
+This section groups contacts endpoints.
+
+## GET [/api/v1/contacts/user/{userId}?type=X]
+Devuelve todos los contactos de un usuario.
+
++ Parameters
+    + userId: `b879dc49-3068-4d09-a952-a3030f5cd9a0` (string) - El id del usuario
+
++ Query Parameters
+    + type: `FAMILIAR - AMIGO - TRABAJO - OTROS` (string) - Para filtrar por tipo de contacto
 
 ## Post [/stream/0/posts/{post_id}]
 A Post is the other central object utilized by the App.net Stream API. It has
