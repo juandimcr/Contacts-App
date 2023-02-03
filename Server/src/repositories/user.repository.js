@@ -29,5 +29,14 @@ async function getUserById(id) {
     }
 }
 
+async function updateUser(user) {
+    try {
+        const userUpdated = await pool.query('UPDATE USER SET ? WHERE id = ?', [user, user.id]);
+        return user;
+    } catch(error) {
+        throw error;
+    }
+}
+
 // Exports
-module.exports = { insertUser, getUserByUsername, getUserById };
+module.exports = { insertUser, getUserByUsername, getUserById, updateUser };

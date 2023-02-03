@@ -34,5 +34,16 @@ async function getUserById(id) {
     }
 }
 
+async function updateUser(userId, body) {
+    try {  
+        const encryptPassword = await encryptUtil.encryptPassword(body.password);
+        const user = new User(userId, body.username, encryptPassword, body.fullname, body.profileImg, body.email);
+        const userUpdated = await userRepository.updateUser(user);
+        return userUpdated;
+    } catch(error) {
+        throw error;
+    }
+}
+
 // Exports
-module.exports = { register, getUserByUsername, getUserById };
+module.exports = { register, getUserByUsername, getUserById, updateUser };

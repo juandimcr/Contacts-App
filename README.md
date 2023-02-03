@@ -172,7 +172,7 @@ Actualizar la información de un usuario.
 
 + Parameters
     + userId: `b879dc49-3068-4d09-a952-a3030f5cd9a0` (string) - El id del usuario
-    
+
 + Responses:
     + 200 - Usuario actualizado correctamente
     + 401 - No puedes acceder
@@ -248,5 +248,6 @@ Inicio de sesión de un usuario en la app
     ```
 NOTA: el accessToken es lo que hay que mandar en las cabeceras http para crear, eliminar, actualizar, devolver los contactos y actualizar el perfil del usuario
 
+## Como ejecutar la aplicación
 
 
