@@ -1,6 +1,10 @@
 import { Link } from "react-router-dom"
 import { useFormik } from "formik";
+import { useState } from "react";
+import { Navigate } from "react-router-dom";
 import Header from "../Header"
+import AlertForm from "./alertForms";
+import * as API from '../../services/api'
 
 const validate = values => {
     const errors = {};
@@ -37,7 +41,9 @@ const validate = values => {
     return errors;
 };
 
-function Login() {
+function Signup() {
+    const [msg, setMsg] = useState('');
+    const [codeHttp, setCodeHttp] = useState(0);
 
     // Initialize values of formik
     const formik = useFormik({
@@ -51,13 +57,18 @@ function Login() {
         },
         validate,
         onSubmit: values => {
-            console.log(values)
+            API.registerUser(values).then((data) => {
+                setMsg(data.dataJSON)
+                setCodeHttp(data.status);
+            });
         },
     });
 
     return (
         <>
             <Header />
+            {codeHttp === 500 ? <AlertForm type='Error:' value={msg} /> : null }
+            {codeHttp === 200 ? <Navigate to={`/login`} /> : null }
             <div className="w-screen h-screen flex justify-between items-center">
                 <div className="w-full h-full flex justify-center items-center flex-col">
                     <h1 className="text-white text-5xl m-5">Regístrese en nuestra app</h1>
@@ -109,4 +120,4 @@ function Login() {
     )
 }
 
-export default Login
+export default Signup

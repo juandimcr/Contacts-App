@@ -2,6 +2,9 @@ import { Link } from "react-router-dom"
 import { useFormik } from "formik"
 import Header from "../Header"
 import { useState } from "react";
+import { Navigate } from "react-router-dom";
+import AlertForm from "./alertForms";
+import * as API from '../../services/api'
 
 // A custom validation function. This must return an object
  // which keys are symmetrical to our values/initialValues
@@ -23,6 +26,8 @@ import { useState } from "react";
   };
 
 function Login() {
+    const [user, setUser] = useState({});
+    const [codeHttp, setCodeHttp] = useState(0);
 
     // Initialize values of formik
     const formik = useFormik({
@@ -32,17 +37,22 @@ function Login() {
         },
         validate,
         onSubmit: values => {
-            console.log(values)
+            API.loginUser(values).then((data) => {
+                setUser(data.dataJSON);
+                setCodeHttp(data.status);
+            });
+            // Meterlo en localStorage
         },
     });
 
     return (
         <>
             <Header />
+            {codeHttp === 400 ? <AlertForm type="Error:" value="El usuario o la contraseña son incorrectas. Intentelo de nuevo" /> : null}
+            {codeHttp === 200 ? <Navigate to={`/${user.username}`} /> : null}
             <div className="w-screen h-screen flex justify-between items-center">
                 <div className="w-full h-full flex justify-center items-center flex-col">
                     <h1 className="text-white text-5xl m-5">Inicie sesión en su cuenta</h1>
-
                     <form onSubmit={formik.handleSubmit} className="m-5 w-2/5">
                         <div className="relative z-0 w-full mb-6 group">
                             <input type="text" id="floating_username" className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " onChange={formik.handleChange} value={formik.values.floating_username} />

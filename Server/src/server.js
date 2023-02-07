@@ -10,8 +10,8 @@ const V1ContactRoutes = require('./v1/routes/contacts.route');
 
 // Config server
 const server = express();
-server.use(express.json());
 server.use(cors());
+server.use(express.json());
 server.use(morgan('dev'));
 
 // Routes v1

@@ -6,7 +6,9 @@ require('dotenv').config();
 
 // Controllers
 async function signIn(req, res) {
+    console.log(req.body)
     try {
+        
         const user = await userService.getUserByUsername(req.body);
         if (!user || user.length == 0 || ! await encryptUtil.comparePassword(user.password, req.body.password)) {
             return res.status(400).json('Username or password are incorrect');
