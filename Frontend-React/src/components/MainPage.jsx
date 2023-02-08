@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom"
+import { Link } from "react-router-dom";
 import mainPagePhoto from "../assets/bg-photo.svg";
 
 function MainPage() {
@@ -24,4 +24,4 @@ function MainPage() {
     )
 }
 
-export default MainPage
+export default MainPage;

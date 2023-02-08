@@ -32,7 +32,8 @@ async function isAuth(req, res, next) {
 	    next();
 
     } catch (error) {
-        return res.status(401).json('Unauthorized');
+        console.error(error)
+        return res.status(401).json('The token has expired');
     }
 }
 

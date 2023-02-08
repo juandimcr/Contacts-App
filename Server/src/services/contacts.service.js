@@ -4,9 +4,9 @@ const Contacts = require('../model/Contacts');
 const contactsRepository = require('../repositories/contacts.repository');
 
 // Functions
-async function getContactsByUsername(userId, filter) {
+async function getContactsByUser(userId, filter) {
     try {
-        const contacts = await contactsRepository.getContactsByUsername(userId, filter);
+        const contacts = await contactsRepository.getContactsByUser(userId, filter);
         return contacts[0];
     } catch (error) {
         throw error;
@@ -25,7 +25,7 @@ async function getContactsById(id) {
 async function insertContact(body) {
     try {
         const contactId = uuidV4();
-        const contact = new Contacts(contactId, body.fullname, body.contactImg, body.type, body.city, body.country, body.user);
+        const contact = new Contacts(contactId, body.phone, body.fullname, body.contactImg, body.type, body.city, body.country, body.user);
         return await contactsRepository.insertContact(contact);
     } catch (error) {
         throw error;
@@ -34,7 +34,7 @@ async function insertContact(body) {
 
 async function updateContact(id, body) {
     try {
-        const contact = new Contacts(body.id, body.fullname, body.contactImg, body.type, body.city, body.country, body.user);
+        const contact = new Contacts(body.id, body.phone, body.fullname, body.contactImg, body.type, body.city, body.country, body.user);
         const contactUpdated =  await contactsRepository.updateContact(contact);
         if (contactUpdated[0].affectedRows >= 1) return true;
         return false;
@@ -52,4 +52,4 @@ async function deleteContact(id) {
 }
 
 // Exports
-module.exports = { getContactsByUsername, getContactsById, insertContact, updateContact, deleteContact };
+module.exports = { getContactsByUser, getContactsById, insertContact, updateContact, deleteContact };

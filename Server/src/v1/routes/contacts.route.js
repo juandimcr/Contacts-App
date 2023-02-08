@@ -5,7 +5,7 @@ const authMiddleware = require('../../middlewares/auth.middleware');
 const contactMiddleware = require('../../middlewares/contact.middleware');
 
 // Routes
-router.get('/user/:userId', authMiddleware.isAuth, contactsController.getContactsByUsername);
+router.get('/user/:userId', authMiddleware.isAuth, contactsController.getContactsByUser);
 router.get('/:id', [authMiddleware.isAuth, contactMiddleware.checkUserEqualContactUser], contactsController.getContactById);
 router.post('/', authMiddleware.isAuth, contactsController.insertNewContact);
 router.put('/:id', [authMiddleware.isAuth, contactMiddleware.checkUserEqualContactUser], contactsController.updateContact);

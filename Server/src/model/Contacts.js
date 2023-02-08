@@ -1,6 +1,7 @@
 class Contacts {
-    constructor(id, fullname, contactImg, type, city, country, user) {
+    constructor(id, phone, fullname, contactImg, type, city, country, user) {
         this.id = id;
+        this.phone = phone
         this.fullname = fullname;
         this.contactImg = contactImg;
         this.type = type;

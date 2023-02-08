@@ -2,9 +2,9 @@
 const contactsService = require('../services/contacts.service');
 
 // Controllers
-async function getContactsByUsername(req, res) {
+async function getContactsByUser(req, res) {
     try {
-        const contacts = await contactsService.getContactsByUsername(req.params.userId, req.query.type);
+        const contacts = await contactsService.getContactsByUser(req.params.userId, req.query.type);
         if (contacts.length > 0) {
             return res.status(200).json(contacts)
         } else {
@@ -35,7 +35,7 @@ async function getContactById(req, res) {
 async function insertNewContact(req, res) {
     try {
 	    const contact = await contactsService.insertContact(req.body);
-	    return res.status(201).json(contact);
+	    return res.status(201).json('The contact has been created');
     } catch (error) {
         console.error(error);
         return res.status(500).json('Error');
@@ -67,4 +67,4 @@ async function deleteContact(req, res) {
 }
 
 // Exports
-module.exports = { getContactsByUsername, getContactById, insertNewContact, updateContact, deleteContact };
+module.exports = { getContactsByUser, getContactById, insertNewContact, updateContact, deleteContact };

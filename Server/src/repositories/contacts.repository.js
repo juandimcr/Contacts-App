@@ -2,7 +2,7 @@
 const pool = require('../database/connection');
 
 // Functions
-async function getContactsByUsername(userId, filter) {
+async function getContactsByUser(userId, filter) {
     try {
         let contacts;
         if (filter === undefined) {
@@ -52,4 +52,4 @@ async function deleteContact(id) {
 }
 
 // Exports
-module.exports = { getContactsByUsername, getContactById, insertContact, updateContact, deleteContact };
+module.exports = { getContactsByUser, getContactById, insertContact, updateContact, deleteContact };
