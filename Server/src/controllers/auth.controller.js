@@ -15,7 +15,7 @@ async function signIn(req, res) {
         } else {
             // Create access token and refresh token
             const accessToken = jwt.sign({ id: user.id }, process.env.SECRET_KEY_AK, {
-                expiresIn: 60, // 7d - 604800
+                expiresIn: 604800, // 7d - 604800
             });
 
             return res.status(200).json({

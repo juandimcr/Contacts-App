@@ -44,7 +44,7 @@ function UserPage() {
                 <div className="flex items-start justify-between w-screen h-screen flex-wrap">
                     {contacts.map(contact => (
                         <>
-                            <div className="flex flex-col items-center justify-between m-6 bg-gray-900 h-3/5 w-1/5 rounded-xl">
+                            <div key={contact.id} className="flex flex-col items-center justify-between m-6 bg-gray-900 h-3/5 w-1/5 rounded-xl">
                                 <img src={contact.contactImg} alt="Imagen del contacto" className="rounded-xl" />
                                 <h2 className="text-white uppercase p-2 bg-gray-700 rounded-xl">{contact.fullname}</h2>
                                 <p className="text-white uppercase p-2 bg-gray-700 rounded-xl">{contact.phone}</p>
