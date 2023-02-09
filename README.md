@@ -250,4 +250,36 @@ NOTA: el accessToken es lo que hay que mandar en las cabeceras http para crear, 
 
 ## Como ejecutar la aplicación
 
++ Ejecutar el servidor
+    ```shell
+        cd Server
+        npm run dev
+    ```
+
++ Ejecutar el minicliente en React
+    ```shell
+        cd Frontend-React
+        npm run dev
+    ```
+
++ Ejecutar el archivo .sql de /Server/src/database/db.sql para tener la base de datos
+
++ El servidor se ejecutará en localhost:3000 y el cliente en localhost:5173
+
+## Variables de entorno a configurar en el servidor (.env)
+
++ Crear archivo .env en la carpeta del servidor y añadir lo siguiente:
+    + PORT=3000
+    + DB_DATABASE=contacts_app
+    + DB_USER=tu usuario de mysql
+    + DB_PSW=tu contraseña de mysql
+    + DB_HOST=localhost
+    + SECRET_KEY_AK=la que sea
+
+## Imágenes del cliente
+NOTA: es un minicliente programado en react para mostrar la funcionalidad de la API. Se podría construir algo más profesional
+
+![Página principal](doc/img-home.PNG)
+
+
 
