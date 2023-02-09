@@ -4,8 +4,6 @@ HOST: https://localhost:3000
 Documentación para la API Contacts App
 [Contacts App API](http://localhost:5173).
 
-NOTE: This document is a **work in progress**.
-
 # Como proveer el token de autenticacion
 Para poder mandar el token de autenticacion es importante añadirlo a la cabecera de la HTTP request como 'Authorization: Bearer token'. Si no es así, no se podrá leer el token
 
