@@ -41,14 +41,14 @@ function UserPage() {
             {contacts === 'Contacts not found' ? (
                 <h1 className="text-white">Contacts not found</h1>
             ) : (
-                <div className="flex items-start justify-between w-screen h-screen flex-wrap">
+                <div className="flex items-start justify-center w-screen h-screen flex-wrap">
                     {contacts.map(contact => (
                         <>
                             <div key={contact.id} className="flex flex-col items-center justify-between m-6 bg-gray-900 h-3/5 w-1/5 rounded-xl">
-                                <img src={contact.contactImg} alt="Imagen del contacto" className="rounded-xl" />
+                                <img src={contact.contactImg} alt="Imagen del contacto" className="rounded-xl w-52 m-4" />
                                 <h2 className="text-white uppercase p-2 bg-gray-700 rounded-xl">{contact.fullname}</h2>
                                 <p className="text-white uppercase p-2 bg-gray-700 rounded-xl">{contact.phone}</p>
-                                <p className="text-white p-2 bg-gray-700 rounded-xl">{contact.type}</p>
+                                <p className="text-white p-2 bg-gray-700 rounded-xl">TIPO: {contact.type}</p>
                                 <p className="text-white uppercase p-2 bg-gray-700 rounded-xl">{contact.city}</p>
                                 <p className="text-white uppercase m-2 p-2 bg-gray-700 rounded-xl">{contact.country}</p>
                                 <div className="flex items-center justify-center">

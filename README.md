@@ -2,7 +2,7 @@ HOST: https://localhost:3000
 
 # Contacts App API
 Documentación para la API Contacts App
-[App.net API](http://contactfrontend).
+[Contacts App API](http://localhost:5173).
 
 NOTE: This document is a **work in progress**.
 
@@ -71,6 +71,7 @@ Devuelve la información del contacto con la id proporcionada.
     ```js
     {
         "id": "f02d7639-3c14-49bb-b29f-802b45923599",
+        "phone": "696887722",
         "fullname": "Juan Diego",
         "contactImg": "https://i.pinimg.com/736x/b2/b2/59/b2b259504f7f286ad5573bce72991455--ferrari-laferrari-ferrari--gto.jpg",
         "type": "FAMILIAR",
@@ -101,13 +102,7 @@ Insertar un nuevo contacto por parte de un usuario
 + Return (application/json)
     ```js
     {
-        "id": "f02d7639-3c14-49bb-b29f-802b45923599",
-        "fullname": "Juan Diego",
-        "contactImg": "https://i.pinimg.com/736x/b2/b2/59/b2b259504f7f286ad5573bce72991455--ferrari-laferrari-ferrari--gto.jpg",
-        "type": "FAMILIAR",
-        "city": "Murcia",
-        "country": "España",
-        "user": "b879dc49-3068-4d09-a952-a3030f5cd9a0"
+        "The contact has been created"
     }
     ```
 ## PUT [/api/v1/contacts/{id}]
@@ -134,13 +129,7 @@ Actualizar la información de un contacto
 + Return (application/json)
     ```js
     {
-        "id": "f02d7639-3c14-49bb-b29f-802b45923599",
-        "fullname": "Juan Diego",
-        "contactImg": "https://i.pinimg.com/736x/b2/b2/59/b2b259504f7f286ad5573bce72991455--ferrari-laferrari-ferrari--gto.jpg",
-        "type": "FAMILIAR",
-        "city": "Murcia",
-        "country": "España",
-        "user": "b879dc49-3068-4d09-a952-a3030f5cd9a0"
+        "Contact updated successfully"
     }
     ```
 
@@ -160,7 +149,7 @@ Eliminar un contacto
 + Return (application/json)
     ```js
     { 
-        Contact has been removed successfully" 
+        "Contact has been removed successfully" 
     }
     ```
 
@@ -189,7 +178,7 @@ Actualizar la información de un usuario.
 
 + Return (application/json)
     ```js
-    {s
+    {
         "id": "2043d34c-2356-498b-9b90-d23b0a025bb3",
         "username": "foo",
         "fullname": "Foo Foo Foo",
@@ -277,9 +266,27 @@ NOTA: el accessToken es lo que hay que mandar en las cabeceras http para crear, 
     + SECRET_KEY_AK=la que sea
 
 ## Imágenes del cliente
-NOTA: es un minicliente programado en react para mostrar la funcionalidad de la API. Se podría construir algo más profesional
+NOTA: es un minicliente programado en React para mostrar la funcionalidad de la API. Se podría construir algo más profesional
 
+# Página principal
 ![Página principal](doc/img-home.PNG)
 
+# Formulario de Registro
+![Página principal](doc/img-signup.PNG)
+
+# Formulario de inicio de sesión
+![Página principal](doc/img-signin.PNG)
+
+# Página del usuario
+![Página principal](doc/img-userpage.PNG)
+
+# Formulaio para crear un contacto
+![Página principal](doc/img-newcontact.PNG)
+
+# Formulario para editar un contacto
+![Página principal](doc/img-editcontact.PNG)
+
+# Página tras insertar nuevo contacto
+![Página principal](doc/img-userpage2.PNG)
 
 
