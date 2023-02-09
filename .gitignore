@@ -1,5 +1,2 @@
 # Ignorar .env del Servidor
 Server/.env
-
-# Ignorar carpeta doc
-doc/
