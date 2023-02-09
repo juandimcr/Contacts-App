@@ -94,7 +94,7 @@ Insertar un nuevo contacto por parte de un usuario
 + Información necesaria para crear un contacto:
     + Fullname - nombre completo del contacto
     + ContactImg - imagen del contacto (URL)
-    + Type - tipo de contacto (FAMILIAR, AMIOGO, TRABAJO, OTRO)
+    + Type - tipo de contacto (FAMILIAR, AMIGO, TRABAJO, OTRO)
     + City - ciudad
     + Country - país
     + User - usuario que crea el contacto
@@ -121,7 +121,7 @@ Actualizar la información de un contacto
 + Información necesaria para actualizar un contacto:
     + Fullname - nombre completo del contacto
     + ContactImg - imagen del contacto (URL)
-    + Type - tipo de contacto (FAMILIAR, AMIOGO, TRABAJO, OTRO)
+    + Type - tipo de contacto (FAMILIAR, AMIGO, TRABAJO, OTRO)
     + City - ciudad
     + Country - país
     + User - usuario que actualiza el contacto
@@ -237,7 +237,7 @@ Inicio de sesión de un usuario en la app
     ```
 NOTA: el accessToken es lo que hay que mandar en las cabeceras http para crear, eliminar, actualizar, devolver los contactos y actualizar el perfil del usuario
 
-## Como ejecutar la aplicación
+# Como ejecutar la aplicación
 
 + Ejecutar el servidor
     ```shell
@@ -255,7 +255,7 @@ NOTA: el accessToken es lo que hay que mandar en las cabeceras http para crear, 
 
 + El servidor se ejecutará en localhost:3000 y el cliente en localhost:5173
 
-## Variables de entorno a configurar en el servidor (.env)
+# Variables de entorno a configurar en el servidor (.env)
 
 + Crear archivo .env en la carpeta del servidor y añadir lo siguiente:
     + PORT=3000
@@ -265,28 +265,28 @@ NOTA: el accessToken es lo que hay que mandar en las cabeceras http para crear, 
     + DB_HOST=localhost
     + SECRET_KEY_AK=la que sea
 
-## Imágenes del cliente
+# Imágenes del cliente
 NOTA: es un minicliente programado en React para mostrar la funcionalidad de la API. Se podría construir algo más profesional
 
-# Página principal
+## Página principal
 ![Página principal](doc/img-home.PNG)
 
-# Formulario de Registro
+## Formulario de Registro
 ![Página principal](doc/img-signup.PNG)
 
-# Formulario de inicio de sesión
+## Formulario de inicio de sesión
 ![Página principal](doc/img-signin.PNG)
 
-# Página del usuario
+## Página del usuario
 ![Página principal](doc/img-userpage.PNG)
 
-# Formulaio para crear un contacto
+## Formulario para crear un contacto
 ![Página principal](doc/img-newcontact.PNG)
 
-# Formulario para editar un contacto
+## Formulario para editar un contacto
 ![Página principal](doc/img-editcontact.PNG)
 
-# Página tras insertar nuevo contacto
+## Página tras insertar nuevo contacto
 ![Página principal](doc/img-userpage2.PNG)
 
 
