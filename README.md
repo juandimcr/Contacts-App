@@ -270,21 +270,21 @@ NOTA: es un minicliente programado en React para mostrar la funcionalidad de la 
 ![Página principal](doc/img-home.PNG)
 
 ## Formulario de Registro
-![Página principal](doc/img-signup.PNG)
+![Formulario Registro](doc/img-signup.PNG)
 
 ## Formulario de inicio de sesión
-![Página principal](doc/img-signin.PNG)
+![Formulario Inicio Sesión](doc/img-signin.PNG)
 
 ## Página del usuario
-![Página principal](doc/img-userpage.PNG)
+![Página usuario](doc/img-userpage.PNG)
 
 ## Formulario para crear un contacto
-![Página principal](doc/img-newcontact.PNG)
+![Formulario crear contacto](doc/img-newcontact.PNG)
 
 ## Formulario para editar un contacto
-![Página principal](doc/img-editcontact.PNG)
+![Formulario editar contacto](doc/img-editcontact.PNG)
 
 ## Página tras insertar nuevo contacto
-![Página principal](doc/img-userpage2.PNG)
+![Página tras insertar contacto](doc/img-userpage2.PNG)
 
 
